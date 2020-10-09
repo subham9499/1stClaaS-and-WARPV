@@ -1,0 +1,32 @@
+INFORM(0) (PROD_INFO):
+	SandPiper(TM) 1.9-2018/02/11-beta from Redwood EDA
+	Run as: "java -jar sandpiper.jar --iArgs --nopath -i out/calc.m4out.tlv -o out/calc.sv
+	For help, including product info, run with -h.
+
+INFORM(0) (LICENSE):
+	Licensed to "Redwood EDA" as: Full Edition.
+
+INFORM(0) (FILES):
+	Reading "out/calc.m4out.tlv" to produce:
+		Translated HDL File: "out/calc.sv"
+		Generated HDL File: "out/calc_gen.sv"
+
+LOGIC_ERROR(5) (UNASSIGNED-SIG): File 'calc.tlv' Line 32 (char 17)
+	Preprocessed as 'out/calc.m4out.tlv':32(ch17):
+	+----------------vvvvvvvv-----------------
+	|            $mem[31:0] = 
+	|               $reset ? 0:
+	>               ($op[2:0]==3'b101)
+	|                  ? >>2$mem[31:0] : >>2$output;
+	|               
+	+----------------^^^^^^^^-----------------
+	Signal |calc$op is used but never assigned.
+
+LOGIC_ERROR(5) (UNASSIGNED-SIG): File 'calc.tlv' Line 18 (char 24)
+	Preprocessed as 'out/calc.m4out.tlv':18(ch24):
+	+-----------------------vvvvvvvvvv--------
+	>         $val2[31:0] = $rand[3:0];
+	+-----------------------^^^^^^^^^^--------
+	Signal |calc$rand is used but never assigned.
+
+[0;31mSandPiper returning status 5.[0m
